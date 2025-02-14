@@ -10,7 +10,7 @@ REPO_NAME = "Chicken-Disease-Classification--Project"
 AUTHOR_USER_NAME = "kartheek"
 SRC_REPO = "potClassifier"
 AUTHOR_EMAIL = "kartheekakkabathula@gmail.com"
-
+ 
 
 setuptools.setup(
     name=SRC_REPO,
