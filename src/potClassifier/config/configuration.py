@@ -1,8 +1,15 @@
+from pathlib import Path
 from potClassifier.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from potClassifier.utils.common import read_yaml,create_directories
 from potClassifier.entity.config_entity import dataingestionconfig
+from potClassifier.entity.config_entity import PrepareBaseModelConfig
+from potClassifier.constants import *
 
-class configurationmanager:
+
+
+
+
+class ConfigurationManager:
     def __init__(self, 
                  config_filepath: CONFIG_FILE_PATH,
                  params_filepath: PARAMS_FILE_PATH,
@@ -22,3 +29,19 @@ class configurationmanager:
             unzip_dir = config.unzip_dir,
         )
         return data_inges_config
+
+    def get_prepare_base_model_configuration(self) -> PrepareBaseModelConfig:
+        config = self.config.prepare_base_model
+        create_directories([config.root_dir])
+
+
+        preparebasemodelconfig = PrepareBaseModelConfig(root_dir=Path(config.root_dir),
+                                                           base_model_path= Path(config.base_model_path),
+                                                           updated_base_model_path= Path(config.updated_base_model_path),
+                                                           params_image_size=self.params.IMAGE_SIZE,
+                                                           params_classes= self.params.CLASSES,
+                                                           params_weights=self.params.WEIGHTS,
+                                                           params_learning_rate=self.params.LEARNING_RATE,
+                                                           params_include_top=self.params.INCLUDE_TOP,
+                                                           )
+        return preparebasemodelconfig

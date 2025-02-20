@@ -1,4 +1,4 @@
-from potClassifier.config.configuration import configurationmanager
+from potClassifier.config.configuration import ConfigurationManager
 from potClassifier.components.data_ingestion import DataIngestion
 from potClassifier.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 
@@ -10,7 +10,7 @@ class dataingestiontrainingpipeline:
     def __init__(self):
         pass
     def main(self):
-        config = configurationmanager(config_filepath=CONFIG_FILE_PATH, params_filepath=PARAMS_FILE_PATH)
+        config = ConfigurationManager(config_filepath=CONFIG_FILE_PATH, params_filepath=PARAMS_FILE_PATH)
         data_ingestion_config = config.get_data_ingestion_config()
         data_ingestion = DataIngestion(config=data_ingestion_config)
         data_ingestion.download_file()
