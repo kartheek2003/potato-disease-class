@@ -7,7 +7,7 @@ from potClassifier.entity.config_entity import PrepareCallbacksConfig
 
 
 
-class prepare_callbacks:
+class PrepareCallback:
     def __init__(self,config:PrepareCallbacksConfig):
         self.config = config
 
