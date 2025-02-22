@@ -1,8 +1,8 @@
 from pathlib import Path
 from potClassifier.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
-from potClassifier.utils.common import read_yaml,create_directories
+from potClassifier.utils.common import read_yaml,create_directories,save_json
 from potClassifier.entity.config_entity import dataingestionconfig
-from potClassifier.entity.config_entity import PrepareBaseModelConfig,PrepareCallbacksConfig,TrainingConfig
+from potClassifier.entity.config_entity import PrepareBaseModelConfig,PrepareCallbacksConfig,TrainingConfig,EvaluationConfig
 from potClassifier.constants import *
 
 import os
@@ -78,3 +78,20 @@ class ConfigurationManager:
             params_learning_rate = params.LEARNING_RATE
         )
         return training_config
+    
+    def get_validation_config(self):
+        eval_config = EvaluationConfig(
+            path_of_model= Path("artifacts/training/model.h5"),
+            training_data= Path("artifacts/data_ingestion/PlantVillage"),
+            all_params= self.params,
+            params_image_size= self.params.IMAGE_SIZE,
+            params_batch_size= self.params.BATCH_SIZE
+        )
+        
+        return eval_config 
+    
+
+
+
+
+    

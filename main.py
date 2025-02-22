@@ -2,6 +2,7 @@ from potClassifier import logger
 from potClassifier.pipeline.stage_01_data_ingestion import dataingestiontrainingpipeline
 from potClassifier.pipeline.stage_02_prepare_base_model import PrepareBaseModelTraining
 from potClassifier.pipeline.stage_03_training import TrainingPipeline
+from potClassifier.pipeline.stage_04_model_evaluation import ModelEvaluationPipeline
 
 STAGE_NAME = "DATA INGESTION STAGE"
 
@@ -41,5 +42,18 @@ if __name__ == "__main__":
         logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<")
     
     except Exception as e: 
+        raise e
+    
+
+
+STAGE_NAME = "Model Evaluation"
+
+if __name__ == '__main__':
+    try :
+        logger.info(f">>>>>>  {STAGE_NAME} started <<<<<<")
+        obj = ModelEvaluationPipeline()
+        obj.main()
+        logger.info(f">>>>>>  {STAGE_NAME} completed <<<<<<")
+    except Exception as e :
         raise e
 
