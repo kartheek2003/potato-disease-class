@@ -13,9 +13,9 @@
 8. Update the main.py
 9. Update the dvc.yaml (dvc init , dvc repro, dvc dag)
 
-steps to run this project in your own system :
+# steps to run this project in your own system :
 
-1.Clone the GitHub Repository
+1.Clone the GitHub Repository(open a terminal or command prompt and run)
    
     "git clone https://github.com/kartheek2003/potato-disease-class.git"
     "cd potato-disease-class"
