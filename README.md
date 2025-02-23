@@ -22,7 +22,6 @@
 
 2.Create and Activate a Virtual Environment
    
-    python -m venv potenv
     .\potenv\Scripts\activate
 
 3.Install Dependencies
