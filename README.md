@@ -33,3 +33,9 @@ steps to run this project in your own system :
 4.Run the Application
 
     "python app.py"
+
+5.train the model  (in any browser)
+   "http://localhost:8080/train"
+
+6.prediction
+   "http://localhost:8080"
