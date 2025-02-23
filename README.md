@@ -16,18 +16,20 @@
 steps to run this project in your own system :
 
 1.Clone the GitHub Repository
+   
     "git clone https://github.com/kartheek2003/potato-disease-class.git"
-
     "cd potato-disease-class"
 
 2.Create and Activate a Virtual Environment
+   
     "python -m venv potenv"
-
     ".\potenv\Scripts\activate"
 
 3.Install Dependencies
+
    "pip install -r requirements.txt"
 
 
 4.Run the Application
+
     "python app.py"
