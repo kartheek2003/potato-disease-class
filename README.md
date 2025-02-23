@@ -20,7 +20,7 @@
     git clone https://github.com/kartheek2003/potato-disease-class.git
     cd potato-disease-class
 
-2.Create and Activate a Virtual Environment
+2.Activate Virtual Environment
    
     .\potenv\Scripts\activate
 
