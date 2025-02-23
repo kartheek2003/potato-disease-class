@@ -11,5 +11,5 @@
 6. Update the components
 7. Update the pipeline 
 8. Update the main.py
-9. Update the dvc.yaml
+9. Update the dvc.yaml (dvc init , dvc repro, dvc dag)
 

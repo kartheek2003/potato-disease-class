@@ -1,0 +1,100 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/potClassifier/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      md5: 42f1ab7dff983c45aac6af103623ef33
+      size: 810
+    - path: src/potClassifier/pipeline/stage_01_data_ingestion.py
+      md5: 53c1d7f6006f45024f99aa19a7b755b3
+      size: 1023
+    outs:
+    - path: artifacts/data_ingestion/PlantVillage
+      md5: 363f24901d45b5ad0a663fb217167bae.dir
+      size: 22976276
+      nfiles: 1152
+  prepare_base_model:
+    cmd: python src/potClassifier/pipeline/stage_02_prepare_base_model.py
+    deps:
+    - path: config/config.yaml
+      md5: 42f1ab7dff983c45aac6af103623ef33
+      size: 810
+    - path: src/potClassifier/pipeline/stage_02_prepare_base_model.py
+      md5: 6dd7c127634070bd4db0e2d875211c3a
+      size: 1015
+    params:
+      params.yaml:
+        CLASSES: 2
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        INCLUDE_TOP: false
+        LEARNING_RATE: 0.01
+        WEIGHTS: imagenet
+    outs:
+    - path: artifacts/prepare_base_model
+      md5: 159a77dde90411383a8d3b8b9a768e5d.dir
+      size: 118073464
+      nfiles: 2
+  training:
+    cmd: python src/potClassifier/pipeline/stage_03_training.py
+    deps:
+    - path: artifacts/data_ingestion/PlantVillage
+      md5: 363f24901d45b5ad0a663fb217167bae.dir
+      size: 22976276
+      nfiles: 1152
+    - path: artifacts/prepare_base_model
+      md5: 159a77dde90411383a8d3b8b9a768e5d.dir
+      size: 118073464
+      nfiles: 2
+    - path: config/config.yaml
+      md5: 42f1ab7dff983c45aac6af103623ef33
+      size: 810
+    - path: src/potClassifier/components/prepare_callbacks.py
+      md5: e69487e34944c07808715a3c96631600
+      size: 998
+    - path: src/potClassifier/pipeline/stage_03_training.py
+      md5: d75979ec3468cae95384fdd9ee3a9853
+      size: 1288
+    params:
+      params.yaml:
+        AUGMENTATION: true
+        BATCH_SIZE: 16
+        EPOCHS: 1
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: artifacts/training/model.h5
+      md5: 013d9cc9372849b66f94a4e046f308fa
+      size: 59551208
+  evaluation:
+    cmd: python src/potClassifier/pipeline/stage_04_model_evaluation.py
+    deps:
+    - path: artifacts/data_ingestion/PlantVillage
+      md5: 363f24901d45b5ad0a663fb217167bae.dir
+      size: 22976276
+      nfiles: 1152
+    - path: artifacts/training/model.h5
+      md5: 013d9cc9372849b66f94a4e046f308fa
+      size: 59551208
+    - path: config/config.yaml
+      md5: 42f1ab7dff983c45aac6af103623ef33
+      size: 810
+    - path: src/potClassifier/pipeline/stage_04_model_evaluation.py
+      md5: c7865adc6cc08e936098b7e01fbc6afb
+      size: 923
+    params:
+      params.yaml:
+        BATCH_SIZE: 16
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: scores.json
+      md5: 9ef6d6cdcb0b9945aa6b9c841e266af0
+      size: 74
