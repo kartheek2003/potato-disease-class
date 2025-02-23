@@ -17,25 +17,25 @@
 
 1.Clone the GitHub Repository(open a terminal or command prompt and run)
    
-    "git clone https://github.com/kartheek2003/potato-disease-class.git"
-    "cd potato-disease-class"
+    git clone https://github.com/kartheek2003/potato-disease-class.git
+    cd potato-disease-class
 
 2.Create and Activate a Virtual Environment
    
-    "python -m venv potenv"
-    ".\potenv\Scripts\activate"
+    python -m venv potenv
+    .\potenv\Scripts\activate
 
 3.Install Dependencies
 
-    "pip install -r requirements.txt"
+    pip install -r requirements.txt
 
 
 4.Run the Application
 
-    "python app.py"
+    python app.py
 
 5.train the model  (in any browser)
-   "http://localhost:8080/train"
+   http://localhost:8080/train
 
 6.prediction
-   "http://localhost:8080"
+   http://localhost:8080
