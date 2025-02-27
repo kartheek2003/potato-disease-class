@@ -13,7 +13,7 @@ WORKDIR /app
 # Copy project files
 COPY . /app  
 
-# Install all dependencies from requirements.txt  
+# Install all dependencies from requirements.txt  docker
 RUN pip install --default-timeout=1000 --no-cache-dir -r requirements.txt  
 
 # Run the application
