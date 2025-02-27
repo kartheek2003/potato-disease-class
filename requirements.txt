@@ -1,5 +1,4 @@
-tensorflow
-pandas 
+tensorflow==2.18.0  
 dvc
 notebook
 numpy
