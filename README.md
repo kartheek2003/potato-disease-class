@@ -46,9 +46,8 @@ Key Features:
 ## 📂 Dataset
 
 - Sourced from publicly available agricultural image datasets
-- Images organized in **3 classes**:
+- Images organized in **2 classes**:
   - `Potato___Early_blight`
-  - `Potato___Late_blight`
   - `Potato___Healthy`
 - Training, validation, and testing splits applied
 
@@ -65,7 +64,40 @@ Key Features:
 
 ## 🌐 Project Architecture
 
+- Dataset → Data Preprocessing → CNN Model → Training & Validation → Web App → Docker/AWS Deployment
 
 
+---
+
+## 🖥️ How to Run Locally
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/kartheek2003/potato-disease-class.git
+   cd potato-disease-class
+
+2. Install dependencies:
+   ```bash
+    pip install -r requirements.txt
+   
+3. Run the Flask app:
+   ```bash
+    python app.py
+
+4. Access the web app at:
+   http://127.0.0.1:8000
+
+5. Train the model first :
+   http://127.0.0.1:8000/train
+
+6. predict :
+   http://127.0.0.1:8000
+
+ upload the input image or any image of ur choice and predict 
 
 
+## 🔮 Future Improvements
+
+- Integrate **Transfer Learning** for faster training  
+- Build **mobile app deployment** for offline predictions  
+- Use **MLOps pipeline** for continuous monitoring and updates  
