@@ -69,6 +69,18 @@ Key Features:
 
 ---
 
+## 🖼️ Project Demo
+
+Below are sample screenshots of the web app in action:
+
+| Homepage | Prediction Example |
+|----------|-------------------|
+| ![Homepage](images/homepage.png) | ![Prediction](images/prediction.png) |
+
+
+
+---
+
 ## 🖥️ How to Run Locally
 
 1. Clone this repository:
