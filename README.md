@@ -75,7 +75,7 @@ Below are sample screenshots of the web app in action:
 
 | Homepage | Prediction Example |
 |----------|-------------------|
-| ![Homepage](images/homepage.png) | ![Prediction](images/prediction.png) |
+| ![Homepage](images/homepage.png) | ![Prediction_healthy](images/healthy.png) | ![Prediction_early_blight](images/early_blight.png) |
 
 
 
