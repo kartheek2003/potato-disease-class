@@ -15,7 +15,7 @@ Key Features:
 - 🖼️ **Image Augmentation** to improve model generalization
 - 🔍 Real-time **disease detection** with uploaded images
 - 🌐 **User-friendly web app** built with Flask
-- ☁️ **Production-ready architecture** (Dockerized & deployable on AWS)
+- ☁️ **Production-ready architecture** (Dockerized & deployable on AWS/AZURE)
 
 ---
 
@@ -37,7 +37,7 @@ Key Features:
 | **Model Type**    | Convolutional Neural Network (CNN) |
 | **Data Augmentation** | `ImageDataGenerator` |
 | **Frontend/Backend** | Flask |
-| **Deployment**    | Docker, AWS-ready |
+| **Deployment**    | Docker, AWS-ready,AZURE-ready |
 | **Visualization** | Matplotlib, Seaborn |
 | **Version Control** | GitHub |
 
@@ -64,7 +64,7 @@ Key Features:
 
 ## 🌐 Project Architecture
 
-- Dataset → Data Preprocessing → CNN Model → Training & Validation → Web App → Docker/AWS Deployment
+- Dataset → Data Preprocessing → CNN Model → Training & Validation → Web App → Docker/AWS Deployment/AZURE Deployment
 
 
 ---
