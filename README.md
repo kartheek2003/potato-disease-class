@@ -113,3 +113,14 @@ Below are sample screenshots of the web app in action:
 - Integrate **Transfer Learning** for faster training  
 - Build **mobile app deployment** for offline predictions  
 - Use **MLOps pipeline** for continuous monitoring and updates  
+
+
+## 🤝 Contributing  
+
+Contributions are welcome!  
+Feel free to **fork** this repository and create a **pull request** with your improvements.  
+
+## ✨ Author  
+
+**Kartheek Akkabathula**  
+[GitHub](https://github.com/kartheek2003)  
